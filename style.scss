@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* main colors */
+$main:(
+    1: crimson,
+    2: darken(#333,5%),
+    3: #fff
+);
+
+// responsive section
+$desktop: 900px;
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+$cel470: 470px;
+@mixin  cel470 {
+    @media (min-width: #{$cel470}) {
+        @content;
+    }
+}
+
+body {
+    background: #333;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+
+// carousel style
+#mega-container {
+
+    width: 100vw;
+	min-height: 300px;
+	position: relative;
+    @include desktop {
+        width: 80vw;
+    }
+
+    #left, #right {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: map-get($main, 1);
+        color: map-get($main, 2);
+        border-radius: 50%;
+        border: none;
+        z-index: 1000;
+        cursor: pointer;
+        box-shadow: 2px 2px 10px #000000;
+        outline: none;
+        font-size: 1.5rem;
+        
+    }
+    #left:hover, #right:hover {
+        opacity: 0.7;
+        font-size: 1.6rem;
+    }
+
+    #left{
+        left: 5px;
+        top: 50%;
+
+        @include desktop {
+            left: 0;
+            transform: translate(-50%,-50%); 
+        }
+    }
+    
+    #right{
+        right: 5px;
+        top: 50%;
+        
+        @include desktop {
+            right: 0;
+            transform: translate(50%,-50%);
+        }
+    }
+}
+
+/// carousel \\\\\\\\\\\
+
+#frame{
+	width: 100vw;
+    min-height: 300px;
+    overflow: hidden;
+    @include desktop {
+        width: 80vw;
+    }
+
+    #carousel{
+        width: fit-content; //1600px
+        display: flex;
+
+
+        .animate{
+            transition-duration: 0.1s;
+            transition-property: transform;
+        }
+
+        a {
+            display: inline-block;
+            width: calc(100vw - 10px);
+            height: 290px;
+            transform: translateX(-200vw);
+            background: #0000008c;
+            margin: 0 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            @include cel470 {
+                transform: translate(-100vw);
+                width: calc(50vw - 10px);
+            }
+            @include desktop {
+                // transform: translate(-194.8px - 10px);
+                transform: translate(-40vw);
+                width: calc(20vw - 10px);
+                // width: 194.8px;
+            }
+
+            h3 {
+                color: #fff;
+                font-size: 1rem;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                padding-bottom: 0px;
+                padding-top: 5px;
+            }
+            h2 {
+                font-size: 0.9rem;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding: 8px 8px 0 8px;
+                line-height: 1rem;
+                color: grey;
+            }
+            
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px 5px 0 0;
+                
+            }
+        }
+  
+    }
+    
+}
