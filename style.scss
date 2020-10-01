@@ -98,7 +98,7 @@ body {
     }
 
     #carousel{
-        width: fit-content; //1600px
+        width: fit-content; 
         display: flex;
 
 
@@ -110,7 +110,7 @@ body {
         a {
             display: inline-block;
             width: calc(100vw - 10px);
-            height: 290px;
+            min-height: 290px;
             transform: translateX(-200vw);
             background: #0000008c;
             margin: 0 5px;
@@ -121,10 +121,8 @@ body {
                 width: calc(50vw - 10px);
             }
             @include desktop {
-                // transform: translate(-194.8px - 10px);
                 transform: translate(-40vw);
                 width: calc(20vw - 10px);
-                // width: 194.8px;
             }
 
             h3 {
@@ -138,7 +136,7 @@ body {
             h2 {
                 font-size: 0.9rem;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                padding: 8px 8px 0 8px;
+                padding: 8px ;
                 line-height: 1rem;
                 color: grey;
             }

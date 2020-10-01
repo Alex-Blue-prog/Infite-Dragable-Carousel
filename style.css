@@ -108,7 +108,7 @@ body {
 #frame #carousel a {
   display: inline-block;
   width: calc(100vw - 10px);
-  height: 290px;
+  min-height: 290px;
   -webkit-transform: translateX(-200vw);
           transform: translateX(-200vw);
   background: #0000008c;
@@ -145,7 +145,7 @@ body {
 #frame #carousel a h2 {
   font-size: 0.9rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 8px 8px 0 8px;
+  padding: 8px;
   line-height: 1rem;
   color: grey;
 }
