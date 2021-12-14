@@ -1,6 +1,6 @@
 # Infinite Carousel
 
-This is an infite and dragable carousel that works for mobile and pc 
+This is an infinite and dragable carousel that works for mobile and pc 
 
 ## technologies used on this project
 
